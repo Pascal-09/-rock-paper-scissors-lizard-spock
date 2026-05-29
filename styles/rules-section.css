@@ -1,0 +1,117 @@
+
+      /*--------*/
+
+      /*2° SEZIONE REGOLE GIOCO CSS*/
+
+      /*--------*/
+
+      /*Container che allinea verticalmente il titolo Regole del gioco ed il container che contiene le mosse disponibili (allineate invece orizzontalmente in una griglia)
+      */
+
+      .game-rules-container, .score-container,.result-container, .counter-match-container{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        vertical-align: center;
+        border-color: rgba(44,44,42, 0.18);
+        border-style: solid;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+      }
+
+      .game-rules-paragraph{
+        padding: 20px;
+        font-size: 14px;
+        color: #993C1D;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      /* Griglia a 3 colonne */
+      
+      .game-moves-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:20px;
+        padding: 20px;
+      }
+
+      .moves-card-flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #FAF9F7;
+        border-radius: 10px;
+        border-style: solid;
+        border-color:  rgba(44,44,42, 0.18);
+        transition: transform 0.2s ease;
+      }
+
+      .moves-card-flex:hover{
+        /* Ingrandisce l'immagine del 20% (1.2 significa il 120% della dimensione originale) */
+        transform: scale(1.1);
+        box-shadow: 0px 0px 6px 2px  rgba(44,44,42, 0.18);
+      }
+
+      .moves-rule-img{
+        margin-top: 8px;
+        width: 80px;
+        height: 80px;
+        background-color: #FAECE7;
+        border-radius: 6px;
+        mix-blend-mode: multiply;
+      }
+
+      .moves-name-paragraph{
+        letter-spacing: 0.08em;
+        font-weight: 600;
+        color: #2C2C2A;
+        padding: 8px;
+      }
+
+      /* 1. Puliamo l'elenco e impostiamo l'allineamento a sinistra */
+      ul.custom-list {
+        list-style: none;       /* Rimuove i pallini predefiniti del browser */
+        padding-left: 0;        /* Azzera il rientro sinistro */
+        margin: 0;
+        font-family: 'Gill Sans', sans-serif; /* Il font che usi nel progetto */
+        font-size: 14px;
+        color: #333333;         /* Colore del testo scuro/antracite */
+      }
+
+      /* 2. Prepariamo lo spazio per il nuovo pallino personalizzato */
+      ul.custom-list li {
+        position: relative;
+        padding-left: 24px;     /* Crea lo spazio a sinistra per ospitare il pallino */
+        margin-bottom: 8px;     /* Spazio verticale tra i punti dell'elenco */
+        text-align: left;
+      }
+
+      /* 3. Creiamo la struttura del cerchietto (valido per tutti i punti) */
+      ul.custom-list li::before {
+        content: "";            
+        position: absolute;
+        left: 4px;              
+        top: 50%;              
+        transform: translateY(-50%); 
+        width: 7px;             
+        height: 7px;          
+        border-radius: 50%;    
+      }
+
+      /* 4. Coloriamo i singoli pallini in base alla classe */
+
+      ul.custom-list li.win::before {
+        background-color: #4B8A29; /* Verde (Vittoria) */
+      }
+
+      ul.custom-list li.lose::before {
+        background-color: #E24C4C; /* Rosso (Sconfitta) */
+      }
+
+      ul.custom-list li.tie::before {
+        background-color: #8C8C8C; /* Grigio (Pareggio) */
+      }
+      

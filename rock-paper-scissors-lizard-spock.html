@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock, Paper, Scissors, Lizard, Spock</title>
+    <link rel="stylesheet" href="styles/rock-paper-lizard-spock.css">
+    <link rel="stylesheet" href="styles/generic-elements.css">
+    <link rel="stylesheet" href="styles/intro-section.css">
+    <link rel="stylesheet" href="styles/rules-section.css">
+    <link rel="stylesheet" href="styles/input-section.css">
+    <link rel="stylesheet" href="styles/score-section.css">
+    <link rel="stylesheet" href="styles/choice-section.css">
+    <link rel="stylesheet" href="styles/result-section.css">
+    <link rel="stylesheet" href="styles/time-section.css">
+    <link rel="stylesheet" href="styles/quote-section.css">
+  </head>
+  
+  <body>
+  <!-- 1° sezione contenente le info di base del gioco -->
+    <section class = "container-img-primary-div">
+      <img class="primary-img" src = "images/generic/Rock_paper_scissors_lizard_spock.svg">
+      <div class = "container-GameTitle-introduction"> 
+        <p class = "GameTitle">Rock · Paper · Scissors · Lizard · Spock</p>
+        <div class="introduction-div">
+          <p class = "introduction-paragraph"> <b> Perché nasce?</b> dopo un paio di mani con un amico che ti conosce bene, si finisce quasi sempre per scegliere la stessa mossa, bloccandosi in una sfilza infinita di pareggi (che, statisticamente, avvengono tra il 75% e l'80% delle volte!). Ecco perché <b>Sam Kass e Karen Bryla</b> hanno inventato la variante <a class="rock-paper-scissors-link" href = "https://www.youtube.com/watch?v=pIpmITBocfM" target="_blank" >Rock, Paper, Scissors, Lizard, Spock</a>, resa poi celebre in tutto il mondo da Sheldon Cooper nella serie <a class = "big-bang-theory-link" href = "https://it.wikipedia.org/wiki/The_Big_Bang_Theory" target="_blank">The Big Bang Theory</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2° sezione contenente le regole del gioco -->
+    <section class="game-rules-container">
+      <p class="game-rules-paragraph">REGOLE DEL GIOCO</p>
+      <div class="game-moves-grid">
+
+        <div class="moves-card-flex">
+          <img class="moves-rule-img" src="images/moves-card-view/sasso-move.jpg">
+          <p class="moves-name-paragraph">Sasso</p>
+
+          <ul class="custom-list">
+            <li class="win">Vince contro Forbici</li>
+            <li class="win">Vince contro Lizard <i>(lo schiaccia)</i></li>
+            <li class="lose">Perde contro Carta</li>
+            <li class="lose">Perde contro Spock <i>(lo vaporizza)</i></li>
+            <li class="tie">Pareggia contro Sasso</li>
+          </ul>
+        </div>
+
+        <div class="moves-card-flex">
+          <img class="moves-rule-img" src="images/moves-card-view/carta-move.jpg">
+          <p class="moves-name-paragraph">Carta</p>
+
+          <ul class="custom-list">
+            <li class="win">Vince contro Sasso</li>
+            <li class="win">Vince contro Spock <i>(lo smentisce)</i></li>
+            <li class="lose">Perde contro Forbici</li>
+            <li class="lose">Perde contro Lizard <i>(lo mangia)</i></li>
+            <li class="tie">Pareggia contro Carta</li>
+          </ul>
+        </div>
+
+
+        <div class="moves-card-flex">
+          <img class="moves-rule-img" src="images/moves-card-view/forbici-move.jpg">
+          <p class="moves-name-paragraph">Forbici</p>
+
+          <ul class="custom-list">
+            <li class="win">Vince contro Carta</li>
+            <li class="win">Vince contro Lizard <i>(lo decapitano)</i></li>
+            <li class="lose">Perde contro Sasso</li>
+            <li class="lose">Perde contro Spock <i>(le rompe)</i></li>
+            <li class="tie">Pareggia contro Forbici</li>
+          </ul>
+        </div>
+
+
+
+        <div class="moves-card-flex">
+          <img class="moves-rule-img" src="images/moves-card-view/lizard-move.jpg">
+          <p class="moves-name-paragraph">Lizard</p>
+
+          <ul class="custom-list">
+            <li class="win">Vince contro Carta <i>(la mangia)</i></li>
+            <li class="win">Vince contro Spock <i>(lo avvelena)</i></li>
+            <li class="lose">Perde contro Sasso</li>
+            <li class="lose">Perde contro Forbici <i>(lo decapitano)</i></li>
+            <li class="tie">Pareggia contro Lizard</li>
+          </ul>
+        </div>
+
+
+        <div class="moves-card-flex">
+          <img class="moves-rule-img" src="images/moves-card-view/spock-move.jpg">
+          <p class="moves-name-paragraph">Spock</p>
+
+          <ul class="custom-list">
+            <li class="win">Vince contro Sasso <i>(la vaporizza)</i></li>
+            <li class="win">Vince contro Forbici <i>(le rompe)</i></li>
+            <li class="lose">Perde contro Carta <i>(lo smentisce)</i></li>
+            <li class="lose">Perde contro Lizard <i>(lo avvelena)</i></li>
+            <li class="tie">Pareggia contro Spock</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione per selezionare il numero di partite -->
+
+    <section class = "counter-match-container">
+      <p class = "counter-match-paragraph">AL MEGLIO DI ?</p>
+      <input class = "js-counterMatch counter-match-input" placeholder = "Inserisci partite da giocare (Ad es 15, 20)">
+    </section>
+
+
+    
+    <!-- 3° sezione contenente lo score del gioco -->
+
+    <section class="score-container">
+      <p class="score-paragraph">PUNTEGGIO</p>
+      <div class="score-card-view">
+
+        <div class="player-score-card-view">
+          <p class="score-paragraph">TU</p>
+          <div class="container-img-playerScore">
+            <img class = "score-img" src = "/images/score-card-view/Blaise_pascal.jpg">
+            <p class = "js-player-score player-score-number">0</p> <!--js-player-score conta vittorie giocatore-->
+          </div>
+        </div>
+
+        <!-- Divisore punteggi -->
+        <div class="score-divider"></div>   
+         <!-- ... -->
+
+        <div class="cpu-score-card-view">
+          <p class="score-paragraph">CPU</p>
+          <div class="container-img-playerScore">
+            <p class="js-cpu-score cpu-score-number">1</p>  <!--js-cpu-score conta vittorie cpu-->
+            <img class = "score-img" src = "/images/score-card-view/typewriter.jpg">
+          </div>
+        </div>
+
+
+        <!-- Divisore punteggi -->
+        <div class="score-divider"></div>   
+         <!-- ... -->
+
+        <div class="tie-score-card-view">
+          <p class="score-paragraph">PAREGGI</p>
+          <div class="container-img-playerScore">
+            <p class=" js-tie-score tie-score-number">0</p> <!--js-tie-score conta pareggi-->
+            <img class = "score-img" src = "/images/score-card-view/balance.avif">
+          </div>
+        </div>
+      </div>
+
+      <div class="reset-container">
+        <button class="reset-button" onclick="resetGame()">
+          <img class="reset-img" src="/images/score-card-view/reset-icon.png">
+          RESET PUNTEGGIO
+        </button>
+      </div>
+
+    </section>
+
+    
+
+
+
+
+
+
+    <!-- 4° sezione contenente le mosse selezionabili dal giocatore (Rimuovo il riquadro che contiene le mosse) -->
+
+     <p class="move-choice-paragraph">SCEGLI LA TUA MOSSA</p>
+    <div class="game-moves-grid">
+
+      <button class="moves-card-flex-button" onclick="
+        playGame('sasso')">
+        <img class = "moves-rule-img" src="images/moves-card-view/sasso-move.jpg">
+        <p class="moves-name-paragraph">Sasso</p>
+      </button>
+
+      <button class="moves-card-flex-button" onclick="
+      playGame('carta')">
+        <img class="moves-rule-img" src="images/moves-card-view/carta-move.jpg">
+        <p class="moves-name-paragraph">Carta</p>
+      </button>
+
+      <button class="moves-card-flex-button" onclick="
+      playGame('forbici')">
+        <img class="moves-rule-img" src="images/moves-card-view/forbici-move.jpg">
+        <p class="moves-name-paragraph">Forbici</p>
+      </button>
+
+      <button class="moves-card-flex-button" onclick="
+      playGame('lizard')">
+        <img class="moves-rule-img" src="images/moves-card-view/lizard-move.jpg">
+        <p class="moves-name-paragraph">Lizard</p>
+      </button>
+
+      <button class="moves-card-flex-button" onclick="
+      playGame('spock')">
+        <img class="moves-rule-img" src="images/moves-card-view/spock-move.jpg">
+        <p class="moves-name-paragraph">Spock</p>
+      </button>
+
+
+    <!-- 5° sezione contenente le mosse selezionabili dal giocatore (Rimuovo il riquadro che contiene le mosse)-->
+    </div> <section class="result-container">
+      <p class="js-result result-paragraph"></p> <!-- Classe js-result popolata con stringa hai vinto o perso-->
+      <div class="card-view-result-container">
+        <div class="card-view-result-player">
+          <p class="player-result-paragraph">TU</p>
+          <img class = "js-img-player-move result-img" src="images/moves-card-view/sasso-move.jpg">
+          <p class = "js-player-move player-result-move">Sasso</p> <!-- Classe js-player-move stringa relativa a mossa del giocatore -->
+        </div>
+         <!-- divisore VS -->
+        <div class="vs-divider">VS</div>
+        <!-- ...  -->
+        <div class="card-view-result-CPU">
+          <p class="cpu-result-paragraph">CPU</p>
+          <img class=" js-img-cpu-move result-img" src="images/moves-card-view/carta-move.jpg">
+          <p class="js-cpu-move cpu-result-move">Carta</p>
+        </div>
+      </div>
+
+      <!-- Container TEMPO DI GIOCO -->
+       <div class="card-view-time-play">
+        <img class="easter-egg-img" src="images/time-icon/clock-future.avif" >
+        <img class="time-icon" src="images/time-icon/back-to-the-future-movie-poster-jpg.webp">
+        <div class="time-vertical-container">
+          <p class="duration-paragraph">PARTITA TERMINATA IN</p>
+          <p class="effective-time-paragraph">[<span class="minute">00</span>:<span class="second">00</span>]</p>
+        </div>
+       </div>
+
+
+
+      <!-- Container esito SCONFITTA img-citazione -->
+
+      <div class="container-final-score-img-lose">
+        <p class="final-status-title js-final-status"></p>
+        <p class="final-score-paragraph-lose">I'm not losing, I'm choosing not to win</p>
+        <div class="container-final-quote">
+          <img class="final-score-img" src="/images/score-card-view/spoc -lose.jpg">
+
+          <!-- Divisore img-citazione -->
+          <div class="lose-divider"></div>
+          <!-- ... -->
+
+          <p class = "js-final-quote final-quote-by-pascal">"Citazione casuale di Spock ..."</p>
+        </div>
+      </div>
+
+      <!-- Container esito VITTORIA img-citazione -->
+
+      <div class="container-final-score-img-win">
+        <p class="final-status-title js-final-status"></p>
+        <p class="final-score-paragraph-win">Bazinga! I'm not crazy, my mother had me tested</p>
+        <div class="container-final-quote">
+          <img class="final-score-img" src="/images/score-card-view/kirk-win.jpg">
+
+          <!-- Divisore img-citazione -->
+          <div class="win-divider"></div>
+          <!-- ... -->
+
+          <p class="js-final-quote final-quote-by-pascal">"Citazione casuale di Kirk..."</p>
+        </div>
+      </div>
+
+
+      <!-- Container esito PAREGGIO img-citazione -->
+      <div class="container-final-score-img-tie">
+        <p class="final-status-title js-final-status"></p>
+        <p class="final-score-paragraph-tie">Fascinating</p>
+        <div class="container-final-quote">
+          <img class="final-score-img" src="/images/score-card-view/kirf-and-spock.png">
+
+          <!-- Divisore img-citazione -->
+          <div class="tie-divider"></div>
+          <!-- ... -->
+
+          <p class="js-final-quote final-quote-by-pascal">"Citazione casuale di The Big Bang Theory"</p>
+        </div>
+      </div>
+    </section> 
+
+      <!-- Collegamento  al file js -->
+    <script src="/scripts/rock-paper-scissors-spock.js" defer>
+    </script>
+
+  </body>
+</html>

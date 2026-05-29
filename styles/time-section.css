@@ -1,0 +1,98 @@
+
+
+      /*--------*/
+
+      /*TEMPO PARTITA CSS*/
+
+      /*--------*/
+
+      .card-view-time-play {
+        display: flex;
+          flex-direction: row;
+          justify-content: center;   
+          align-items: center;
+          gap: 32px;                 
+          background-color: #FAF9F7;
+          border-radius: 10px;
+          border: 3px solid #A32D2D;
+          margin: 20px auto;             /* Centrato automaticamente senza bloccare i lati */
+          width: 90%;                    /* Adattabile allo schermo */
+          max-width: 700px;              /* Dimensione ottimale massima */
+          padding: 24px 40px;        
+          position: relative;
+      }
+
+      .easter-egg-img {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        mix-blend-mode: multiply;
+        opacity: 0.6;   
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .easter-egg-img:hover {
+        opacity: 1;
+        transform: scale(1.2) rotate(10deg);  
+      }
+
+
+      .time-icon{
+        width: 100%;                   /* Fluidità totale */
+        max-width: 250px;              /* Non supererà i 250px di larghezza */
+        height: auto;
+        object-fit: cover;
+        mix-blend-mode: multiply;
+        border-top-left-radius: 9px;
+        border-bottom-left-radius: 9px
+      }
+
+      .time-vertical-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 0;
+        gap: 8px;
+        min-width: 200px;              /* Garantisce uno spazio minimo al testo */
+      }
+
+      .duration-paragraph{
+        font-size: 20px;
+        letter-spacing: 0.08em;
+        color: #993C1D;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .effective-time-paragraph{
+        font-size: 40px;
+        font-weight: 700;
+        color: #2C2C2A;
+        padding: 0;
+        line-height: 1;
+        letter-spacing: 0.08em;
+      }
+
+      .minute{
+        color:#D85A30;
+      }
+
+
+      /* --- NUOVA MEDIA QUERY PER COPERTURA MOBILE --- */
+      @media (max-width: 600px) {
+        .card-view-time-play {
+          flex-direction: column;      /* Incolonna la locandina e il testo */
+          padding: 40px 20px 24px 20px;/* Spazio extra in alto per l'icona easter-egg */
+          gap: 16px;
+        }
+        
+        .time-vertical-container {
+          align-items: center;         /* Centra il testo su mobile */
+          text-align: center;
+        }
+      }

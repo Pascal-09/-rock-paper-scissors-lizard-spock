@@ -1,0 +1,102 @@
+
+
+      /*--------*/
+
+      /*5° SEZIONE RISULTATO PARTITA CSS*/
+
+      /*--------*/
+
+      /*Affianca orizzontalmente contenitore mossa scelta dal giocatore e contenitore mossa scelta da CPU*/
+
+      .card-view-result-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap:8px;
+      }
+
+    .card-view-result-player, .card-view-result-CPU {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #FAF9F7;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: rgba(44,44,42, 0.18);
+      padding: 20px;                 /* Padding uniforme e più compatto */
+      width: 40%;                    /* Distribuisce lo spazio fluidamente */
+      max-width: 200px;              /* Limite massimo per PC */
+      margin: 10px;                  /* Ridotto il margine esterno */
+      transition: border-color 0.4s ease;
+    }
+
+
+      .result-paragraph{
+        padding: 20px;
+        font-size: 22px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        transition: color 0.4s ease;
+        color: #2C2C2A; /* Colore scuro di default all'avvio */
+      }
+
+
+      .result-win {
+        color: #D85A30 !important;  /* Arancione per la vittoria */
+      }
+
+      .result-tie {
+        color: #6c757d !important; /* Grigio per il pareggio */
+      }
+
+
+
+      .player-result-paragraph,
+      .cpu-result-paragraph{
+          padding: 10px;
+          font-size: 18px;
+          color: #2C2C2A;
+          font-weight: 600;
+          text-align: center;
+      }
+
+      
+      /* Testi delle mosse di base: inizialmente ENTRAMBI sono grigi */
+      .player-result-move, 
+      .cpu-result-move {
+        font-size: 24px;
+        padding: 10px;
+        color: #5F5E5A; /* Grigio neutro di default per entrambi */
+        font-weight: 600;
+        text-align: center;
+        transition: color 0.4s ease;
+      }
+
+
+
+      /* CLASSE DINAMICA: Assegna l'arancione a chi vince */
+      .is-winner {
+        border-color: #D85A30 !important; /* Illumina il riquadro di arancione */
+      }
+
+
+      /* Cerca il testo della mossa dentro al riquadro che ha la classe .is-winner e lo colora */
+      .is-winner .player-result-move,
+      .is-winner .cpu-result-move {
+        color: #D85A30 !important; /* Illumina la stringa della mossa di arancione */
+      }
+
+
+      .vs-divider{
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      /* Rende le immagini delle mosse (Lizard, Carta, ecc.) responsive */
+    .result-img {
+      max-width: 100%;
+      height: auto;
+    }

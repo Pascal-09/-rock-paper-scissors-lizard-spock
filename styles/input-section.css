@@ -1,0 +1,71 @@
+/* 1. Gestione del CONTENITORE (Aggiunto per dare stabilità e simmetria) */
+.counter-match-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  max-width: 750px; /* Stessa larghezza massima della sezione punteggio */
+  box-sizing: border-box;
+}
+
+/* 2. Il Paragrafo "AL MEGLIO DI ?" */
+.counter-match-paragraph {
+  padding: 20px 20px 10px 20px; /* Ridotto leggermente il padding inferiore */
+  font-size: 14px;
+  color: #993C1D;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 3. L'Input con i margini fluidi al posto di quelli fissi */
+.counter-match-input {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+  padding: 12px;
+  font-weight: 600;
+  
+  /* --- MODIFICA CRUCIALE: Rimosso 280px --- */
+  margin-left: auto;  /* Centra l'elemento fluidamente */
+  margin-right: auto; /* Centra l'elemento fluidamente */
+  margin-bottom: 20px;
+  width: 80%;         /* Occupa l'80% dello spazio disponibile */
+  max-width: 200px;   /* Impedisce di allargarsi troppo su PC, mantenendo la forma a "pillola" */
+  /* ---------------------------------------- */
+  
+  background-color: #FAF9F7;
+  border-radius: 10px;
+  border-color: rgba(44,44,42, 0.18);
+  border-style: solid;
+  cursor: pointer;
+  transition: 0.4s ease;
+  text-align: center;
+  color: #D85A30;
+}
+
+/* Effetto Hover mantenuto */
+.counter-match-input:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 6px 2px #993C1D;
+  border-color: #993C1D;
+}
+
+/* Effetto Focus mantenuto */
+.counter-match-input:focus {
+  outline: none !important; 
+  border-color: #993C1D !important; 
+  box-shadow: 0 0 12px rgba(153, 60, 29, 0.25); 
+  background-color: #ffffff; 
+  caret-color: #993C1D; 
+}
+
+/* --- MEDIA QUERY PER DISPOSITIVI MOBILI --- */
+@media (max-width: 480px) {
+  .counter-match-input {
+    width: 90%;        /* Su schermi molto piccoli si allarga leggermente per essere più facile da tappare */
+    font-size: 16px;   /* Dimensione ottimale su mobile per evitare lo zoom forzato dei browser */
+    padding: 10px;
+  }
+}

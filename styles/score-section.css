@@ -1,0 +1,175 @@
+
+
+      /*--------*/
+
+      /*3° SEZIONE PUNTEGGIO GIOCO CSS*/
+
+      /*--------*/
+
+
+      /*Container che allinea verticalemente titolo score, card view che mostra punteggio corrente del gioco e quello della CPU, e pulsante di reset del punteggio (si veda sopra, è stato ereditato lo stile precedente con cui è stato caratterizzato il rules-container)*/
+
+      /*Al suo interno troviamo una card-view che mostra punteggio corrente giocatore e quello della CPU allineatiorizzontalmente*/
+      .score-card-view {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        align-items: center;
+        background-color: #FAF9F7;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: rgba(44,44,42, 0.18);
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+        max-width: 750px;
+        padding: 12px;
+        gap: 10px;
+      }
+
+      /*container che allineano verticalmente paragrafi nome, CPU e rispettivi score*/
+      
+      .cpu-score-card-view, 
+      .player-score-card-view,
+      .tie-score-card-view{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        min-width: 0;
+      }
+
+       .score-paragraph{
+          padding: 20px;
+          font-size: 14px;
+          color: #993C1D;
+          font-weight: 600;
+          text-align: center;
+       }
+
+      .player-score-number, 
+      .cpu-score-number,
+      .tie-score-number{
+        font-size: 24px;
+        font-weight: 500;
+        color: black;
+      }
+
+      .cpu-score-number{
+        color:#D85A30;
+      }
+
+      .tie-score-number{
+        color:#2C2C2A;
+      }
+
+      .container-img-playerScore{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap:10px;
+      }
+
+
+      .score-img{
+        margin-top: 8px;
+        width: 100%;
+        max-width: 60px; 
+        height: auto;                   /* Mantiene le proporzioni */
+        border-radius: 6px;
+        mix-blend-mode: multiply;
+      }
+
+      .score-divider{
+        width: 1.5px;
+        height: 80px;                   
+        background-color: rgba(44,44,42, 0.18);
+        align-self: center;
+        flex-shrink: 0;
+      }
+
+
+      .reset-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .reset-img{
+        width: 18px;         
+        height: 18px;
+        mix-blend-mode: multiply;
+        display: block; 
+        transform: translateX(-100px);
+        filter: drop-shadow(100px 0 0 #888780);
+        transition: filter 0.2s ease;
+      }
+
+      .reset-button{
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;                
+        padding: 8px 16px;       
+        font-size: 14px; 
+        font-weight: 600;        
+        color: #888780;
+        letter-spacing: 0.08em;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        background-color: #FFFFFF;
+        border-radius: 14px;
+        overflow: hidden; /* <-- Nasconde l'icona originale nera */
+        transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+      }
+
+
+      .reset-button:hover{
+        background-color: #FAECE7;
+        color: #D85A30;
+        transform: scale(1.05);
+        font-weight: 600;  
+      }
+
+      /* NUOVA REGOLA: Quando passi sopra al bottone, l'ombra dell'icona diventa arancione */
+      .reset-paragraph:hover .reset-img {
+        filter: drop-shadow(100px 0 0 #D85A30);
+      }
+
+      .player-score-card-view p.score-paragraph{
+        color: #2C2C2A;
+      }
+
+      .cpu-score-card-view p.score-paragraph{
+        color: #2C2C2A;
+      }
+
+      .tie-score-card-view p.score-paragraph{
+        color: #2C2C2A;
+      }
+
+    @media (max-width: 480px) {
+      .score-card-view {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .score-divider {
+        display: none;                /* Nasconde le linee verticali quando è in verticale */
+      }
+      
+      .container-img-playerScore {
+        justify-content: center;
+      }
+    }
+
+

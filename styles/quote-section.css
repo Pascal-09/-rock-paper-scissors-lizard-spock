@@ -1,0 +1,200 @@
+/*--------*/
+/*RIQUADRI ESITO PARTITA*/
+/*--------*/
+
+/* 1. STATO INIZIALE CUMULATIVO: Nascondiamo totalmente i blocchi e azzeriamo lo spazio */
+.container-final-score-img-lose,
+.container-final-score-img-win,
+.container-final-score-img-tie {
+  display: none !important; /* Forza la scomparsa totale dal flusso della pagina */
+  opacity: 0;
+  margin: 0 !important;     /* Impedisce la creazione di spazi vuoti fantasma */
+}
+
+/* 2. CONFIGURAZIONE STILI PARTICOLARI (Senza display e senza margini qui!) */
+.container-final-score-img-lose {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: #FAF9F7;
+  border-radius: 10px;
+  border: 3px solid rgb(213, 31, 31);
+}
+
+.container-final-score-img-win {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: #FAF9F7;
+  border-radius: 10px;
+  border: 3px solid green;
+}
+
+.container-final-score-img-tie {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: #FAF9F7;
+  border-radius: 10px;
+  border: 3px solid grey;
+}
+
+/* 3. CLASSI DI ATTIVAZIONE: Mostrano il blocco e applicano i margini SOLO quando serve */
+.container-final-score-img-lose.is-visible,
+.container-final-score-img-win.is-visible,
+.container-final-score-img-tie.is-visible {
+display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  max-width: 800px;           /* Imposta una larghezza massima ideale */
+  margin-left: auto !important;  /* Centra il riquadro nello schermo */
+  margin-right: auto !important; /* Centra il riquadro nello schermo */
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+  animation: fadeInSmooth 0.6s ease forwards;
+}
+
+/* 4. ELEMENTI INTERNI (Testi, immagini, divisori) */
+.final-score-paragraph-lose,
+.final-score-paragraph-win,
+.final-score-paragraph-tie {
+  padding: 10px 10px 2px 10px;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 10px;
+  margin: 8px 8px 0px 8px;
+}
+
+.final-score-paragraph-lose { color: #A32D2D; }
+.final-score-paragraph-win  { color: #3B6D11; }
+.final-score-paragraph-tie  { color: grey; }
+
+.result-img {
+  margin-top: 8px;
+  width: 100px;
+  height: 100px;
+  mix-blend-mode: multiply;
+}
+
+.container-final-quote {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 28px;
+  padding: 22px 32px 28px;
+  margin-top: 16px;
+  position: relative;
+}
+
+
+.container-final-quote::before {
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #3a3a38;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.final-quote-by-pascal {
+  font-style: italic;
+  font-size: 24px;        /* Leggermente più grande per dargli rilevanza */
+  line-height: 1.6;
+  color: #3a3a38;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.lose-divider, 
+.win-divider, 
+.tie-divider {
+  width: 4px;             
+  height: 140px;         
+  border-radius: 2px;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.lose-divider,
+.win-divider,
+.tie-divider {
+  width: 3px;
+  height: 120px;
+  border-radius: 3px;
+  align-self: center;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+.lose-divider { background: #A32D2D; }
+.win-divider  { background: #3B7A2A; }
+.tie-divider  { background: #6B6B6B; }
+
+
+.final-score-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 10px;
+  mix-blend-mode: multiply;
+}
+
+.container-final-score-img-win  .final-score-img { filter: grayscale(0%)  sepia(8%); }
+.container-final-score-img-lose .final-score-img { filter: grayscale(30%); }
+.container-final-score-img-tie  .final-score-img { filter: grayscale(40%); }
+
+
+
+/* 5. ANIMAZIONE */
+@keyframes fadeInSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .container-final-quote {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 20px 24px;
+  }
+
+  .lose-divider,
+  .win-divider,
+  .tie-divider {
+    width: 60px;
+    height: 3px;
+  }
+
+  .final-score-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .final-quote-by-pascal {
+    text-align: center;
+  }
+}
+
+
+.final-status-title {
+  font-size: 32px;          /* Grande e d'impatto */
+  font-weight: 600;         /* Molto marcato */
+  text-align: center;
+  text-transform: uppercase;/* Forza il maiuscolo */
+  margin-top: 24px;
+  margin-bottom: 10px;
+  letter-spacing: 0.08px;      /* Spazia leggermente le lettere per un look moderno */
+}
